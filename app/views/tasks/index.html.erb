@@ -1,0 +1,19 @@
+<% title 'Todo'%>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Finished</th>
+	</tr>
+	<% for task in @tasks %>
+		<tr>
+			<td><%= task.name %></td>
+			<td><%= task.finished %></td>
+			<td><%= link_to "Show", task %></td>
+			<td><%= link_to "Edit", edit_task_path(task) %></td>
+			<td><%= link_to "Destroy", task, :confirm => "Are you sure?", :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p><%= link_to "New Task", new_task_path %></p>
